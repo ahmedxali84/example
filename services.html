@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TAZIONIX - Complete Amazon Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
 * {
     margin: 0;
@@ -159,7 +160,7 @@ body {
 
 .nav-cta:hover {
     color: #FFFFFF;
-    transform: translateY(-3px);
+    transform: translateX(3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
@@ -244,7 +245,7 @@ body {
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
+    transform: translateX(10px); /* changed from translateY(-10px) */
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     background: rgba(0, 59, 54, 0.5);
     border-color: #F46F25;
@@ -347,7 +348,7 @@ body {
 
 .cta-button:hover {
     color: #FFFFFF;
-    transform: translateY(-3px);
+    transform: translateX(3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 .navbar-container:active{
@@ -416,24 +417,36 @@ body {
     color: #F46F25;
 }
 
-.footer-social {
-    margin-top: 10px;
+
+        .footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .footer-social a {
-    display: inline-block;
-    margin-right: 10px;
-    transition: transform 0.3s;
+    color: #ffffff;
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-social a:hover {
     transform: scale(1.2);
 }
 
-.footer-social img {
-    width: 24px;
-    height: 24px;
+/* Brand hover colors */
+.footer-social a.facebook:hover {
+    color: #1877f2; /* Facebook Blue */
 }
+
+.footer-social a.x:hover {
+    color: #000000; /* X (Twitter Black) */
+}
+
+.footer-social a.instagram:hover {
+    color: #e1306c; /* Instagram Pinkish */
+}
+
 
 .footer-bottom {
     text-align: center;
@@ -538,7 +551,7 @@ body {
                     <a href="services.html" class="nav-link active">SERVICES</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">ABOUT</a>
+                    <a href="about.html" class="nav-link">ABOUT</a>
                 </li>
                 <li class="nav-item">
                     <a href="./Contact.html" class="nav-link">CONTACT</a>
@@ -709,10 +722,9 @@ body {
                 <p>Email: info@tazionix.com</p>
                 <p>Phone: +1 (770) 877-4828</p>
                 <div class="footer-social">
-                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
-                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Twitter"></a>
-                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733614.png" alt="Instagram"></a>
-                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733553.png" alt="LinkedIn"></a>
+                    <a href="#" aria-label="Facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="X" class="x"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
