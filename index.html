@@ -585,17 +585,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.badge::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(244, 111, 37, 0.1), transparent);
-    transition: all 0.7s ease;
+    isolation: isolate; /* Creates new stacking context */
 }
 
 .badge:hover {
@@ -603,8 +593,103 @@ body {
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
+/* Directional overlay elements */
+.badge::before,
+.badge::after {
+    content: '';
+    position: absolute;
+    background-color: #008080; /* Teal */
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.4s ease;
+}
+
+/* Horizontal overlay (left/right) */
+.badge::before {
+    width: 100%;
+    height: 0;
+    left: 0;
+}
+
+/* Vertical overlay (top/bottom) */
+.badge::after {
+    width: 0;
+    height: 100%;
+    top: 0;
+}
+
+/* Hover from top */
+.badge:hover::after {
+    opacity: 0.2;
+    width: 100%;
+    animation: fillFromTop 0.4s forwards;
+}
+
+/* Hover from right */
 .badge:hover::before {
-    left: 100%;
+    opacity: 0.2;
+    height: 100%;
+    top: 0;
+    animation: fillFromRight 0.4s forwards;
+}
+
+/* Hover from bottom */
+.badge:hover::after {
+    opacity: 0.2;
+    width: 100%;
+    bottom: 0;
+    top: auto;
+    animation: fillFromBottom 0.4s forwards;
+}
+
+/* Hover from left */
+.badge:hover::before {
+    opacity: 0.2;
+    height: 100%;
+    right: 0;
+    left: auto;
+    animation: fillFromLeft 0.4s forwards;
+}
+
+/* Color change after fill */
+.badge:hover .color-change {
+    opacity: 0.2;
+    background-color: #F46F25; /* Orange */
+    animation: colorChange 0.4s 0.4s forwards;
+}
+
+.color-change {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+}
+
+@keyframes fillFromTop {
+    0% { height: 0; top: 0; }
+    100% { height: 100%; top: 0; }
+}
+
+@keyframes fillFromRight {
+    0% { width: 0; right: 0; }
+    100% { width: 100%; right: 0; }
+}
+
+@keyframes fillFromBottom {
+    0% { height: 0; bottom: 0; }
+    100% { height: 100%; bottom: 0; }
+}
+
+@keyframes fillFromLeft {
+    0% { width: 0; left: 0; }
+    100% { width: 100%; left: 0; }
+}
+
+@keyframes colorChange {
+    to { background-color: #F46F25; }
 }
 
 .badge h3 {
@@ -612,14 +697,15 @@ body {
     margin-bottom: 15px;
     font-size: 1.5rem;
     font-weight: 700;
+    position: relative;
 }
 
 .badge-logo {
     width: 150px;
     height: auto;
     margin-bottom: 15px;
+    position: relative;
 }
-
 .promo-card {
     background: linear-gradient(135deg, #D45B1F, #007C79);
     border-radius: 12px;
@@ -1002,7 +1088,7 @@ body {
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="#" class="nav-logo">TAZIONIX</a>
+            <a href="index.html" class="nav-logo">TAZIONIX</a>
             <button class="mobile-menu-btn">☰</button>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -1015,7 +1101,7 @@ body {
                     <a href="#" class="nav-link">ABOUT</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">CONTACT</a>
+                    <a href="Contact.html" class="nav-link">CONTACT</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-cta">Free Consultation</a>
@@ -1075,22 +1161,29 @@ body {
 
         <!-- Amazon Ads Badges with Logos -->
         <div class="badges">
-            <div class="badge">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon Logo" class="badge-logo">
-                <h3>Amazon Ads</h3>
-                <p>Verified Partner</p>
+            <div class="badge-container">
+                <div class="badge">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon Logo" class="badge-logo">
+                    <h3>Amazon Ads</h3>
+                    <p>Verified Partner</p>
+                </div>
             </div>
-            <div class="badge">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon Logo" class="badge-logo">
-                <h3>Amazon Ads</h3>
-                <p>Advanced Partner</p>
+            <div class="badge-container">
+                <div class="badge">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon Logo" class="badge-logo">
+                    <h3>Amazon Ads</h3>
+                    <p>Advanced Partner</p>
+                </div>
             </div>
-            <div class="badge">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon Logo" class="badge-logo">
-                <h3>Amazon Ads</h3>
-                <p>Virtual Ads</p>
+            <div class="badge-container">
+                <div class="badge">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon Logo" class="badge-logo">
+                    <h3>Amazon Ads</h3>
+                    <p>Virtual Ads</p>
+                </div>
             </div>
         </div>
+        
 
         <div class="hero-container">
             <div class="hero-content">
@@ -1241,6 +1334,32 @@ body {
     </footer>
 
     <script>
+       document.querySelectorAll('.badge-container').forEach(container => {
+    container.addEventListener('mouseenter', (e) => {
+        const badge = container.querySelector('.badge');
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Calculate distance to each edge
+        const topDist = y;
+        const bottomDist = rect.height - y;
+        const leftDist = x;
+        const rightDist = rect.width - x;
+        
+        // Determine closest edge
+        const minDist = Math.min(topDist, bottomDist, leftDist, rightDist);
+        
+        let direction;
+        if (minDist === topDist) direction = 'top';
+        else if (minDist === bottomDist) direction = 'bottom';
+        else if (minDist === leftDist) direction = 'left';
+        else direction = 'right';
+        
+        badge.setAttribute('data-hover-direction', direction);
+    });
+});
+
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
