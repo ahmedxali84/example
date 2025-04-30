@@ -72,7 +72,7 @@ body {
 }
 
 .nav-link {
-    color: #333333;
+    color: white;
     text-decoration: none;
     font-weight: 500;
     font-size: 15px;
@@ -443,6 +443,29 @@ body {
     margin-top: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
+/* On hover: CTA text stays white even when navbar is scrolled */
+.navbar.scrolled .nav-cta:hover {
+    color: #FFFFFF;
+}
+
+/* Active nav-link color: orange */
+.nav-link.active {
+    color: #F46F25 !important;
+}
+
+/* Active nav-link on scrolled navbar */
+.navbar.scrolled .nav-link.active {
+    color: #F46F25 !important;
+}
+.navbar.scrolled .nav-link {
+    color: #333333;
+}
+.navbar.scrolled .nav-logo {
+    color: #007C79;
+}
+.navbar.scrolled .mobile-menu-btn {
+    color: #333333;
+}
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -512,13 +535,13 @@ body {
                     <a href="index.html" class="nav-link">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">SERVICES</a>
+                    <a href="services.html" class="nav-link active">SERVICES</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">ABOUT</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">CONTACT</a>
+                    <a href="./Contact.html" class="nav-link">CONTACT</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-cta">Free Consultation</a>
