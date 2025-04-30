@@ -19,9 +19,10 @@
     color: white;
     margin-bottom: 10px;
 }
-/* .step-icon:hover{
-    color:#F46F25
-} */
+.step-icon:hover {
+    color: #F46F25;
+}
+
 body {
     background: linear-gradient(135deg, #007C79 0%, #007C79 30%, #D45B1F 90%, #D45B1F 20%);
     color: #FFFFFF;
@@ -261,7 +262,7 @@ body {
 
 .cta-button:hover {
     color: #FFFFFF;
-    transform: translateY(-3px);
+    transform: translateY(3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
@@ -466,7 +467,6 @@ body {
 }
 
 .process-step:hover .step-number {
-    transform: scale(1.2);
     background: #FFFFFF;
     color: #F46F25;
 }
@@ -478,7 +478,7 @@ body {
     transition: all 0.3s ease;
 }
 .step-icon:hover{
-    color: #F46F25
+    color: #F46F25,
 }
 .process-step:hover .step-title {
     color: #F46F25;
@@ -598,7 +598,7 @@ body {
 .badge::after {
     content: '';
     position: absolute;
-    background-color: #008080; /* Teal */
+    background-color: #F46F25; /* Teal */
     opacity: 0;
     z-index: -1;
     transition: all 0.4s ease;
@@ -1043,24 +1043,37 @@ body {
     color: #F46F25;
 }
 
+
 .footer-social {
-    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .footer-social a {
-    display: inline-block;
-    margin-right: 10px;
-    transition: transform 0.3s;
+    color: #ffffff;
+    font-size: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-social a:hover {
     transform: scale(1.2);
 }
 
-.footer-social img {
-    width: 24px;
-    height: 24px;
+/* Brand hover colors */
+.footer-social a.facebook:hover {
+    color: #1877f2; /* Facebook Blue */
 }
+
+.footer-social a.x:hover {
+    color: #000000; /* X (Twitter Black) */
+}
+
+.footer-social a.instagram:hover {
+    color: #e1306c; /* Instagram Pinkish */
+}
+
+
 
 .footer-bottom {
     text-align: center;
@@ -1310,21 +1323,20 @@ body {
             <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./Contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Contact Us</h3>
-                <p>Email: support@tazionix.com</p>
-                <p>Phone: +1 (555) 123-4567</p>
+                <p>Email: info@tazionix.com</p>
+                <p>Phone: +1 (770) 877-4828</p>
                 <div class="footer-social">
-                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
-                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Twitter"></a>
-                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733614.png" alt="Instagram"></a>
-                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733553.png" alt="LinkedIn"></a>
+                    <a href="#" aria-label="Facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="X" class="x"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="Instagram" class="instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
