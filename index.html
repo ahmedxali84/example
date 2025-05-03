@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TAZIONIX - Amazon Ads Management</title>
     <!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
 * {
@@ -167,7 +167,7 @@ body {
 
 .nav-cta:hover {
     color: #FFFFFF;
-    transform: translateY(-3px);
+    transform: translateY(3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
@@ -380,7 +380,7 @@ body {
 }
 
 .feature-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(10px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     background: rgba(0, 59, 54, 0.5);
 }
@@ -563,6 +563,7 @@ body {
     line-height: 1.6;
 }
 
+/* Enhanced Badge Styles */
 .badges {
     display: flex;
     justify-content: center;
@@ -571,13 +572,18 @@ body {
     flex-wrap: wrap;
 }
 
+.badge-container {
+    perspective: 1000px;
+    width: 320px;
+}
+
 .badge {
     background: #F6F6F6;
     color: #333333;
     padding: 30px;
     border-radius: 15px;
     text-align: center;
-    width: 320px;
+    width: 100%;
     transition: all 0.5s ease;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     position: relative;
@@ -585,111 +591,36 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    isolation: isolate; /* Creates new stacking context */
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+}
+
+.badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #007C79, #D45B1F);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
 }
 
 .badge:hover {
-    transform: translateY(-10px);
+    transform: translateY(10px) rotateX(5deg) rotateY(5deg);
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    color: white;
 }
 
-/* Directional overlay elements */
-.badge::before,
-.badge::after {
-    content: '';
-    position: absolute;
-    background-color: #F46F25; /* Teal */
-    opacity: 0;
-    z-index: -1;
-    transition: all 0.4s ease;
-}
-
-/* Horizontal overlay (left/right) */
-.badge::before {
-    width: 100%;
-    height: 0;
-    left: 0;
-}
-
-/* Vertical overlay (top/bottom) */
-.badge::after {
-    width: 0;
-    height: 100%;
-    top: 0;
-}
-
-/* Hover from top */
-.badge:hover::after {
-    opacity: 0.2;
-    width: 100%;
-    animation: fillFromTop 0.4s forwards;
-}
-
-/* Hover from right */
 .badge:hover::before {
-    opacity: 0.2;
-    height: 100%;
-    top: 0;
-    animation: fillFromRight 0.4s forwards;
+    opacity: 1;
 }
 
-/* Hover from bottom */
-.badge:hover::after {
-    opacity: 0.2;
-    width: 100%;
-    bottom: 0;
-    top: auto;
-    animation: fillFromBottom 0.4s forwards;
-}
-
-/* Hover from left */
-.badge:hover::before {
-    opacity: 0.2;
-    height: 100%;
-    right: 0;
-    left: auto;
-    animation: fillFromLeft 0.4s forwards;
-}
-
-/* Color change after fill */
-.badge:hover .color-change {
-    opacity: 0.2;
-    background-color: #F46F25; /* Orange */
-    animation: colorChange 0.4s 0.4s forwards;
-}
-
-.color-change {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    opacity: 0;
-}
-
-@keyframes fillFromTop {
-    0% { height: 0; top: 0; }
-    100% { height: 100%; top: 0; }
-}
-
-@keyframes fillFromRight {
-    0% { width: 0; right: 0; }
-    100% { width: 100%; right: 0; }
-}
-
-@keyframes fillFromBottom {
-    0% { height: 0; bottom: 0; }
-    100% { height: 100%; bottom: 0; }
-}
-
-@keyframes fillFromLeft {
-    0% { width: 0; left: 0; }
-    100% { width: 100%; left: 0; }
-}
-
-@keyframes colorChange {
-    to { background-color: #F46F25; }
+.badge:hover h3,
+.badge:hover p {
+    color: white;
 }
 
 .badge h3 {
@@ -698,6 +629,7 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     position: relative;
+    transition: color 0.3s ease;
 }
 
 .badge-logo {
@@ -705,7 +637,13 @@ body {
     height: auto;
     margin-bottom: 15px;
     position: relative;
+    transition: transform 0.5s ease;
 }
+
+.badge:hover .badge-logo {
+    transform: scale(1.1);
+}
+
 .promo-card {
     background: linear-gradient(135deg, #D45B1F, #007C79);
     border-radius: 12px;
@@ -844,7 +782,7 @@ body {
 }
 
 .service-card:hover {
-    transform: translateY(-12px);
+    transform: translateX(8px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     border-color: #FF7043;
     background: rgba(255, 255, 255, 0.18);
@@ -979,9 +917,8 @@ body {
         gap: 20px;
     }
 
-    .badge {
+    .badge-container {
         width: 100%;
-        max-width: 300px;
     }
 }
 
@@ -1072,8 +1009,6 @@ body {
 .footer-social a.instagram:hover {
     color: #e1306c; /* Instagram Pinkish */
 }
-
-
 
 .footer-bottom {
     text-align: center;
