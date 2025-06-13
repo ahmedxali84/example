@@ -50,11 +50,11 @@ body {
 }
 
 .nav-logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #FFFFFF;
-    text-decoration: none;
-    transition: color 0.3s;
+    position: relative;
+    top: 7px;
+    height: 60px;
+    width: auto;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .navbar.scrolled .nav-logo {
@@ -172,6 +172,7 @@ body {
     background: linear-gradient(45deg, #007C79, #D45B1F);
 }
 
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -234,7 +235,7 @@ body {
 }
 
 .service-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 59, 54, 0.5);
     border-radius: 15px;
     padding: 30px;
     transition: all 0.5s ease;
@@ -538,30 +539,34 @@ body {
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html" class="nav-logo">TAZIONIX</a>
-            <button class="mobile-menu-btn">☰</button>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a href="services.html" class="nav-link active">SERVICES</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">ABOUT</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./Contact.html" class="nav-link">CONTACT</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-cta">Free Consultation</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="index.html">
+      <img src="logo-12.png" alt="TAZIONIX Logo" class="nav-logo" id="navbar-logo">
+    </a>
+
+    <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">☰</button>
+
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a href="services.html" class="nav-link">SERVICES</a>
+      </li>
+      <li class="nav-item">
+        <a href="about.html" class="nav-link">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a href="Contact.html" class="nav-link">CONTACT</a>
+      </li>
+      <li class="nav-item">
+        <a href="mailto:info@tazionix.com?subject=Free%20Consultation%20Request" class="nav-cta">Free Consultation</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 
     <div class="container">
         <!-- Services Hero Section -->
@@ -575,12 +580,12 @@ body {
             <h2 class="category-title">Product Research & Sourcing</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Product Research" class="service-image">
+                    <img src="product-research2.png" alt="Product Research" class="service-image">
                     <h3>Product Research</h3>
                     <p>Comprehensive market analysis using tools like Helium 10 and Jungle Scout to identify profitable products with high demand and low competition.</p>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Supplier Sourcing" class="service-image">
+                    <img src="supplier-sourcing.png" alt="Supplier Sourcing" class="service-image">
                     <h3>Supplier Sourcing</h3>
                     <p>Vetted supplier connections from Alibaba and Global Sources with quality assurance checks and negotiation for best pricing.</p>
                 </div>
@@ -592,17 +597,17 @@ body {
             <h2 class="category-title">Listing Management</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Listing Creation" class="service-image">
+                    <img src="listing.png" alt="Listing Creation" class="service-image">
                     <h3>Listing Creation</h3>
                     <p>Professional product listings with SEO-optimized titles, bullet points, and descriptions that convert while ranking for key search terms.</p>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Listing Optimization" class="service-image">
+                    <img src="listingopt.png" alt="Listing Optimization" class="service-image">
                     <h3>Listing Optimization</h3>
                     <p>Continuous A/B testing and refinement of listings with enhanced brand content (EBC/A+) to maximize conversions and visibility.</p>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Graphics Designing" class="service-image">
+                    <img src="graphic.png" alt="Graphics Designing" class="service-image">
                     <h3>Graphics Designing</h3>
                     <p>Professional product images, infographics, and lifestyle photos that highlight features while meeting Amazon's requirements.</p>
                 </div>
@@ -614,17 +619,17 @@ body {
             <h2 class="category-title">Advertising & Marketing</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Keyword Research" class="service-image">
+                    <img src="keyword.png" alt="Keyword Research" class="service-image">
                     <h3>Keyword Research</h3>
                     <p>Identification of high-converting, low-competition keywords using advanced tools to target the right audience.</p>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="PPC Campaign Management" class="service-image">
+                    <img src="PPC.png" alt="PPC Campaign Management" class="service-image">
                     <h3>PPC Campaign Management</h3>
                     <p>Daily optimization of Sponsored Products, Sponsored Brands, and DSP campaigns to maximize ROAS and scale profitable campaigns.</p>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Product Launching" class="service-image">
+                    <img src="PL.png" alt="Product Launching" class="service-image">
                     <h3>Product Launching</h3>
                     <p>Proven launch strategies combining PPC, external traffic, and promotions to quickly rank new products.</p>
                 </div>
@@ -636,17 +641,17 @@ body {
             <h2 class="category-title">Operations & Support</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Inventory Management" class="service-image">
+                    <img src="IM.png" alt="Inventory Management" class="service-image">
                     <h3>Inventory Management</h3>
                     <p>Demand forecasting and inventory planning to prevent stockouts (which hurt rankings) and minimize storage fees.</p>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Order Processing" class="service-image">
+                    <img src="OP.png" alt="Order Processing" class="service-image">
                     <h3>Order Processing</h3>
                     <p>Fulfillment coordination, shipment tracking, and customer communication for smooth operations.</p>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Customer Service" class="service-image">
+                    <img src="cs.png" alt="Customer Service" class="service-image">
                     <h3>Customer Service</h3>
                     <p>Professional handling of inquiries, returns, and issues to maintain seller metrics and brand reputation.</p>
                 </div>
@@ -658,22 +663,22 @@ body {
             <h2 class="category-title">Account Management</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Account Health Monitoring" class="service-image">
+                    <img src="AHM.png" alt="Account Health Monitoring" class="service-image">
                     <h3>Account Health Monitoring</h3>
                     <p>Proactive monitoring of metrics (ODR, late shipments) to prevent selling privilege impacts.</p>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Review Management" class="service-image">
+                    <img src="RM.png" alt="Review Management" class="service-image">
                     <h3>Review Management</h3>
                     <p>Ethical review generation strategies with automated follow-up systems that comply with Amazon policies.</p>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sales Reporting" class="service-image">
+                    <img src="SIR.png" alt="Sales Reporting" class="service-image">
                     <h3>Sales & Inventory Reporting</h3>
                     <p>Custom dashboards and weekly reports showing key metrics, trends, and actionable insights.</p>
                 </div>
                 <div class="service-card">
-                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Reimbursement Cases" class="service-image">
+                    <img src="RSC.png" alt="Reimbursement Cases" class="service-image">
                     <h3>Reimbursement Cases Handling</h3>
                     <p>Recovery of funds for lost/damaged inventory and incorrect fees through automated systems and manual audits.</p>
                 </div>
@@ -709,15 +714,6 @@ body {
                 </ul>
             </div>
             <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
                 <h3>Contact Us</h3>
                 <p>Email: info@tazionix.com</p>
                 <p>Phone: +1 (770) 877-4828</p>
@@ -734,57 +730,54 @@ body {
     </footer>
 
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+// ===== Logo Scroll Effect =====
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  const logo = document.getElementById('navbar-logo');
 
-        // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navMenu = document.querySelector('.nav-menu');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+    logo.src = 'logo-2.png'; // Update this with your "on-scroll" logo
+  } else {
+    navbar.classList.remove('scrolled');
+    logo.src = 'logo-12.png'; // Default logo
+  }
+});
 
-        mobileMenuBtn.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-        });
+// ===== Mobile Menu Toggle =====
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navMenu = document.querySelector('.nav-menu');
 
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-            });
-        });
+mobileMenuBtn.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
 
-        // Button click handler
-        document.querySelectorAll('.cta-button, .nav-cta').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                alert('Thank you for your interest! We will contact you shortly.');
-            });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+// ===== Close Mobile Menu on Link Click =====
+document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+  });
+});
 
-        // Highlight current page in navigation
-        const currentPage = window.location.pathname.split('/').pop();
-        document.querySelectorAll('.nav-link').forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('active');
-            }
-        });
-    </script>
+// ===== Animate Services Cards on Scroll =====
+const serviceCards = document.querySelectorAll('.service-card');
+
+const revealOnScroll = () => {
+  const triggerBottom = window.innerHeight * 0.9;
+
+  serviceCards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+    if (cardTop < triggerBottom) {
+      card.classList.add('visible');
+    } else {
+      card.classList.remove('visible');
+    }
+  });
+};
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
+
 </body>
 </html>
