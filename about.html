@@ -50,12 +50,13 @@
             left: 0;
             width: 100%;
             padding: 10px 0;
+            background: transparent;
             transition: all 0.3s ease;
             z-index: 1000;
         }
         
         .navbar.scrolled {
-            background: rgba(255, 255, 255, 1.98);
+            background: rgba(255, 255, 255, 0.98);
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
             padding: 8px 0;
         }
@@ -69,13 +70,15 @@
             padding: 0 20px;
         }
         
-        .nav-logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: var(--light);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+.nav-logo {
+    position: relative;
+    top: 7px;
+    height: 60px;
+    width: auto;
+    transition: opacity 0.3s ease-in-out;
+
+}
+
         
         .navbar.scrolled .nav-logo {
             color: var(--primary);
@@ -216,14 +219,14 @@
             font-size: 1.2rem;
             color: var(--text-light);
         }
-        
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 60px;
-            flex-wrap: wrap;
-        }
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 60px;
+    flex-wrap: nowrap; /* prevent wrapping */
+    }
+
         
         .stat-box {
             background: rgba(255, 255, 255, 0.1);
@@ -857,30 +860,33 @@
             </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="navbar-container">
-            <a href="index.html" class="nav-logo">TAZIONIX</a>
-            <button class="mobile-menu-btn">☰</button>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a href="services.html" class="nav-link">SERVICES</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link active">ABOUT</a>
-                </li>
-                <li class="nav-item">
-                    <a href="./Contact.html" class="nav-link">CONTACT</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-cta">Free Consultation</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="index.html">
+      <img src="logo-12.png" alt="TAZIONIX Logo" class="nav-logo" id="navbar-logo">
+    </a>
+
+    <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">☰</button>
+
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a href="services.html" class="nav-link">SERVICES</a>
+      </li>
+      <li class="nav-item">
+        <a href="about.html" class="nav-link">ABOUT</a>
+      </li>
+      <li class="nav-item">
+        <a href="Contact.html" class="nav-link">CONTACT</a>
+      </li>
+      <li class="nav-item">
+        <a href="mailto:info@tazionix.com?subject=Free%20Consultation%20Request" class="nav-cta">Free Consultation</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
     <!-- Hero Section -->
     <section class="about-hero">
@@ -891,16 +897,20 @@
             
             <div class="hero-stats">
                 <div class="stat-box">
-                    <div class="stat-number">250+</div>
-                    <div class="stat-label">Brands Empowered</div>
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">WholeSales Stores Handle</div>
                 </div>
                 <div class="stat-box">
-                    <div class="stat-number">$50M+</div>
+                    <div class="stat-number">750K+</div>
                     <div class="stat-label">Annual Sales Generated</div>
                 </div>
                 <div class="stat-box">
                     <div class="stat-number">98%</div>
                     <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Employees</div>
                 </div>
             </div>
         </div>
@@ -921,28 +931,28 @@
             <div class="story-content">
                 <h3>Building the Future of Ecommerce</h3>
                 <p>Founded in 2020 by a team of Amazon veterans, TAZIONIX was born from a shared frustration with the lack of transparent, results-driven agencies in the Amazon ecosystem. We set out to create a different kind of partner—one that combines deep marketplace expertise with cutting-edge technology.</p>
-                <p>What began as a small team working with local brands has grown into a full-service Amazon agency serving clients across North America, Europe, and Asia. Our growth has been fueled by one simple principle: deliver measurable results or don't take the client.</p>
+                <p>What began as a small team working with local brands has grown into a full-service Amazon agency serving clients across USA & Europe. Our growth has been fueled by one simple principle: deliver measurable results or don't take the client.</p>
                 
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-year">2020</div>
                         <div class="timeline-content">
                             <h4>Company Founded</h4>
-                            <p>Launched with 3 team members and 5 initial clients</p>
+                            <p>Launched with 2 team members and 10 initial clients</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-year">2021</div>
                         <div class="timeline-content">
-                            <h4>First Million</h4>
-                            <p>Helped clients generate over $1M in combined monthly sales</p>
+                            <h4>First 100k</h4>
+                            <p>Helped clients generate over 100k in combined monthly sales</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-year">2023</div>
                         <div class="timeline-content">
                             <h4>Global Expansion</h4>
-                            <p>Expanded services to European and Asian marketplaces</p>
+                            <p>Expanded services to European and American marketplaces</p>
                         </div>
                     </div>
                 </div>
@@ -1188,16 +1198,19 @@
                 }
             });
         });
-        
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if(window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+       // ===== Navbar Scroll Effect (Logo Swap) =====
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  const logo = document.getElementById('navbar-logo');
+
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+    logo.src = 'logo-2.png'; // Replace with your "scrolled" logo
+  } else {
+    navbar.classList.remove('scrolled');
+    logo.src = 'logo-12.png'; // Original logo
+  }
+});
         
         // Animation on scroll
         const animateOnScroll = () => {
